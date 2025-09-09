@@ -1,13 +1,13 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  Modal,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
+    Modal,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 export default function SendMoneyScreen() {
@@ -89,7 +89,7 @@ export default function SendMoneyScreen() {
       <View style={styles.header}>
         <TouchableOpacity 
           style={styles.backButton}
-          onPress={() => router.push('/(tabs)/' as any)}
+          onPress={() => router.push('/(tabs)/home' as any)}
         >
           <Text style={styles.backIcon}>←</Text>
         </TouchableOpacity>

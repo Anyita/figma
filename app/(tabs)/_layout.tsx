@@ -45,7 +45,13 @@ export default function TabLayout() {
           headerShown: false,
           tabBarStyle: { display: 'none' }, // 隐藏默认tab bar
         }}
-        initialRouteName="home">
+        initialRouteName="notification">
+        <Tabs.Screen
+          name="notification"
+          options={{
+            title: 'Notification',
+          }}
+        />
         <Tabs.Screen
           name="home"
           options={{

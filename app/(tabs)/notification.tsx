@@ -1,24 +1,25 @@
-import { NotificationCard } from '@/components/NotificationCard';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Dimensions, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { NotificationCard } from '../../components/NotificationCard';
 
 /**
- * IndexScreen - 应用主页（启动页面）
+ * NotificationScreen - 应用启动页面（默认页面）
  * 
  * Features:
  * - 全屏背景图片显示
- * - 通知卡片组件居中显示
- * - 点击卡片跳转到主应用页面
+ * - 居中显示通知卡片
+ * - 点击通知卡片跳转到Home页面
  * - 无底部导航栏
+ * - 响应式设计适配不同屏幕尺寸
  */
-export default function IndexScreen() {
+export default function NotificationScreen() {
   const router = useRouter();
 
   const handleCardPress = () => {
-    // 跳转到主应用的tabs页面
-    router.push('/(tabs)/' as any);
+    console.log('Notification card pressed - navigating to home');
+    router.replace('/(tabs)/home' as any);
   };
 
   return (
@@ -34,7 +35,7 @@ export default function IndexScreen() {
         accessibilityRole="image"
       />
       
-      {/* 通知卡片 - 放置在指定位置，可点击跳转 */}
+      {/* 通知卡片 - 可点击跳转到Home页面 */}
       <TouchableOpacity style={styles.cardContainer} onPress={handleCardPress}>
         <NotificationCard 
           title="Additional info needed"
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain', // Maintain aspect ratio and fit within bounds
   },
   
-  // 卡片容器 - 距离屏幕顶部330px，左右各16px间距
+  // 卡片容器 - 距离屏幕顶部320px，左右间距16px
   cardContainer: {
     position: 'absolute',
     top: 330, // 距离屏幕顶部330px
@@ -72,3 +73,4 @@ const styles = StyleSheet.create({
     zIndex: 1, // 确保在背景图片之上
   },
 });
+

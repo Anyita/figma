@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    width: '100%', // 响应式宽度，填满父容器
+    width: '100%', // 响应式宽度，填充父容器
     // iOS阴影效果
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -132,6 +132,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 18, // 1.193359375em * 15px
     color: '#3F3F3F',
-    flex: 1, // 响应式宽度，填满可用空间
+    flex: 1, // 响应式宽度，填充剩余空间
   },
 });

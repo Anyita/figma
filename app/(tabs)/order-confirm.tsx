@@ -1,18 +1,18 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
+    Image,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 export default function OrderConfirmScreen() {
   const router = useRouter();
-  const { selectedPayment, estimatedTime } = useLocalSearchParams<{
+  const { estimatedTime } = useLocalSearchParams<{
     selectedPayment?: string;
     estimatedTime?: string;
   }>();
@@ -148,7 +148,7 @@ export default function OrderConfirmScreen() {
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={styles.homeButton}
-          onPress={() => router.push('/(tabs)/' as any)}
+          onPress={() => router.push('/(tabs)/home' as any)}
         >
           <Text style={styles.homeButtonText}>Go to Home</Text>
         </TouchableOpacity>

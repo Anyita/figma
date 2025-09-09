@@ -68,8 +68,8 @@ export function CustomTabBar({ tabs, activeTab, onTabPress }: CustomTabBarProps)
       return activeTab === tabName;
     }
     // 默认激活Home页面
-    if (pathname === '/(tabs)' || pathname === '/(tabs)/' || pathname.includes('home') || pathname === '/(tabs)/home') {
-      return tabName === 'home';
+    if (pathname === '/' || pathname === '/(tabs)' || pathname === '/(tabs)/' || pathname.includes('index') || pathname === '/(tabs)/index') {
+      return tabName === 'index';
     }
     // Send Money始终显示为激活状态（根据第二张图）
     if (tabName === 'send-money') {
@@ -79,7 +79,7 @@ export function CustomTabBar({ tabs, activeTab, onTabPress }: CustomTabBarProps)
   };
 
   // 如果是Send Money页面，隐藏tab bar
-  if (pathname.includes('send-money') || pathname.includes('transfer-summary') || pathname.includes('order-confirm') || pathname.includes('transfer-detail')) {
+  if (pathname.includes('send-money') || pathname.includes('transfer-summary') || pathname.includes('order-confirm') || pathname.includes('transfer-detail') || pathname.includes('notification')) {
     return null;
   }
 
