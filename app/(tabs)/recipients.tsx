@@ -16,7 +16,7 @@ export default function RecipientsScreen() {
           Recipients
         </ThemedText>
         <ThemedText style={styles.subtitle}>
-          管理您的收款人列表
+          Manage your recipient list
         </ThemedText>
       </View>
     </ThemedView>

@@ -16,7 +16,7 @@ export default function TrackScreen() {
           Track
         </ThemedText>
         <ThemedText style={styles.subtitle}>
-          追踪您的交易状态
+          Track your transaction status
         </ThemedText>
       </View>
     </ThemedView>

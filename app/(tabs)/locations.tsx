@@ -16,7 +16,7 @@ export default function LocationsScreen() {
           Locations
         </ThemedText>
         <ThemedText style={styles.subtitle}>
-          查找附近的服务地点
+          Search the nearest service locations
         </ThemedText>
       </View>
     </ThemedView>
