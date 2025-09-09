@@ -320,27 +320,31 @@ export default function TransferDetailScreen() {
                 </View>
                 
                 <View style={styles.timelineContent}>
-                  <Text style={[
-                    styles.timelineTitle,
-                    item.completed ? styles.timelineTitleCompleted : styles.timelineTitlePending
-                  ]}>
-                    {item.title}
-                  </Text>
+                  <View style={styles.timelineHeader}>
+                    <View style={styles.timelineTitleContainer}>
+                      <Text style={[
+                        styles.timelineTitle,
+                        item.completed ? styles.timelineTitleCompleted : styles.timelineTitlePending
+                      ]}>
+                        {item.title}
+                      </Text>
+                      {(item as any).actionText && (
+                        <TouchableOpacity style={styles.actionTextButton}>
+                          <Text style={styles.actionText}>{(item as any).actionText}</Text>
+                        </TouchableOpacity>
+                      )}
+                    </View>
+                    {(item as any).showUploadButton && (
+                      <TouchableOpacity style={styles.uploadButton}>
+                        <Text style={styles.uploadButtonText}>Upload</Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
                   {item.time && (
                     <Text style={styles.timelineTime}>{item.time}</Text>
                   )}
                   {item.description && (
                     <Text style={styles.timelineDescription}>{item.description}</Text>
-                  )}
-                  {(item as any).actionText && (
-                    <TouchableOpacity style={styles.actionTextButton}>
-                      <Text style={styles.actionText}>{(item as any).actionText}</Text>
-                    </TouchableOpacity>
-                  )}
-                  {(item as any).showUploadButton && (
-                    <TouchableOpacity style={styles.uploadButton}>
-                      <Text style={styles.uploadButtonText}>Upload</Text>
-                    </TouchableOpacity>
                   )}
                   {item.estimatedTime && (
                     <Text style={styles.estimatedTime}>
@@ -587,21 +591,30 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: '#FF6E13',
   },
+  timelineHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  timelineTitleContainer: {
+    flex: 1,
+  },
   actionTextButton: {
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 2,
+    marginBottom: 0,
   },
   actionText: {
     fontSize: 12,
     fontWeight: '600',
     color: '#FF6E13',
+    textDecorationLine: 'underline',
   },
   uploadButton: {
     backgroundColor: '#FF6E14',
     borderRadius: 16,
     paddingHorizontal: 8,
     paddingVertical: 6,
-    marginTop: 8,
     alignSelf: 'flex-start',
   },
   uploadButtonText: {
